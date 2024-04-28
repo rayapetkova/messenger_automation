@@ -14,14 +14,7 @@ driver = webdriver.Chrome()
 
 driver.get("https://www.messenger.com/")
 
-random_messages = [
-    'stavaii',
-    'spri da spishhh',
-    'HriZZi',
-    'utre si na uchilishte :))',
-    'priqtno sudiistvane v zalata',
-    'Hrisiiii'
-]
+random_messages = []
 
 try:
     allow_cookies_button = driver.find_element(By.XPATH, config('ALLOW_COOKIES_BUTTON'))
@@ -59,7 +52,7 @@ try:
 
     time.sleep(5)
 
-    for idx in range(2):
+    for idx in range(len(random_messages)):
         input_field.clear()
         input_field.send_keys(random_messages[idx])
         input_field.send_keys(Keys.RETURN)
